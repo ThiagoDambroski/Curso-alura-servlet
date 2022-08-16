@@ -1,4 +1,4 @@
-package br.com.dambroski.gerenciador.servlet;
+package br.com.dambroski.gerenciador.acao;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -7,23 +7,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.dambroski.gerenciador.modelo.Banco;
 import br.com.dambroski.gerenciador.modelo.Empresa;
 
-/**
- * Servlet implementation class NovaEmpresaServlet
- */
-//@WebServlet("/novaEmpresa")
-public class NovaEmpresaServlet extends HttpServlet {
-
-	private static final long serialVersionUID = 1L;
-
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class NovaEmpresa {
+	
+	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		String nomeEmpresa = request.getParameter("nome");
 		String dataEmpresa = request.getParameter("data");
@@ -43,7 +35,7 @@ public class NovaEmpresaServlet extends HttpServlet {
 		
 		request.setAttribute("empresa",empresa.getNome());
 		
-		response.sendRedirect("listaEmpresas");
+		response.sendRedirect("entrada?acao=ListaEmpresas");
 	}
 
 }

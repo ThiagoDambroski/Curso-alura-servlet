@@ -1,4 +1,4 @@
-package br.com.dambroski.gerenciador.servlet;
+package br.com.dambroski.gerenciador.modelo;
 
 import java.util.Date;
 
