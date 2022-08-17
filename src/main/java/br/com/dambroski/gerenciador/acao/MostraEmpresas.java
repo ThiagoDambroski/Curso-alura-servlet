@@ -21,7 +21,7 @@ public class MostraEmpresas {
 		Empresa empresa = banco.buscaEmpresaId(id);
 		
 		request.setAttribute("empresa", empresa);
-		return "forward:/fromAlteraEmpresa.jsp";
+		return "forward:fromAlteraEmpresa.jsp";
 		
 		
 	}
