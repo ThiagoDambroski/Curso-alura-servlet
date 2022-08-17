@@ -9,7 +9,7 @@ import br.com.dambroski.gerenciador.modelo.Banco;
 
 public class RemoveEmpresas {
 	
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		System.out.println("removendo empresa");
 		
 		String paramId = request.getParameter("id");
@@ -17,7 +17,7 @@ public class RemoveEmpresas {
 		Banco banco = new Banco();
 		banco.remove(id);
 		
-		response.sendRedirect("entrada?acao=ListaEmpresas");
+		return "redirect:entrada?acao=ListaEmpresas";
 	}
 
 }

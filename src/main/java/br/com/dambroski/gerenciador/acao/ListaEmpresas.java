@@ -13,15 +13,15 @@ import br.com.dambroski.gerenciador.modelo.Empresa;
 
 public class ListaEmpresas {
 	
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("listando empresa");
 		Banco banco = new Banco();
 	    List<Empresa> lista = banco.getEmpresa();
 
 	    request.setAttribute("empresas", lista);
-
-	    RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresa.jsp");
-	    rd.forward(request,response);
+	    
+	    return "forward:listaEmpresa.jsp";
+	    
 	}
 
 }
