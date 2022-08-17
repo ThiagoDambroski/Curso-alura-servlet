@@ -12,7 +12,7 @@ import br.com.dambroski.gerenciador.modelo.Empresa;
 
 public class MostraEmpresas {
 	
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("mostrando empresa");
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
@@ -21,10 +21,9 @@ public class MostraEmpresas {
 		Empresa empresa = banco.buscaEmpresaId(id);
 		
 		request.setAttribute("empresa", empresa);
-		RequestDispatcher rd = request.getRequestDispatcher("/fromAlteraEmpresa.jsp");
-		rd.forward(request, response);
+		return "forward:/fromAlteraEmpresa.jsp";
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 	}
 
 }

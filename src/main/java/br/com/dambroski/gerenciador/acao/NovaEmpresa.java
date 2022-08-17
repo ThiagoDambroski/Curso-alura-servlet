@@ -15,7 +15,7 @@ import br.com.dambroski.gerenciador.modelo.Empresa;
 
 public class NovaEmpresa {
 	
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		String nomeEmpresa = request.getParameter("nome");
 		String dataEmpresa = request.getParameter("data");
@@ -35,7 +35,7 @@ public class NovaEmpresa {
 		
 		request.setAttribute("empresa",empresa.getNome());
 		
-		response.sendRedirect("entrada?acao=ListaEmpresas");
+		return "redirect:entrada?acao=ListaEmpresas";
 	}
 
 }
