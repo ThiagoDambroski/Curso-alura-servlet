@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.dambroski.gerenciador.modelo.Banco;
 import br.com.dambroski.gerenciador.modelo.Empresa;
 
-public class NovaEmpresaForm {
+public class NovaEmpresaForm implements Acao {
 	
 		public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.dambroski.gerenciador.modelo.Banco;
 
-public class RemoveEmpresas {
+public class RemovaEmpresa implements Acao{
 	
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		System.out.println("removendo empresa");
