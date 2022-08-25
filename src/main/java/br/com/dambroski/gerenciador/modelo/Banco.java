@@ -23,8 +23,8 @@ public class Banco {
 		u1.setSenha("12345");
 		
 		Usuario u2 = new Usuario();
-		u1.setLogin("leticia");
-		u1.setSenha("12345");
+		u2.setLogin("leticia");
+		u2.setSenha("12345");
 		
 		listaUsuario.add(u1);
 		listaUsuario.add(u2);
@@ -59,6 +59,15 @@ public class Banco {
 		for (Empresa empresa : lista) {
 			if(empresa.getId() == id) {
 				return empresa;
+			}
+		}
+		return null;
+	}
+
+	public Usuario existeUsuario(String login, String senha) {
+		for(Usuario u : listaUsuario) {
+			if(u.ehIgual(login, senha)) {
+				return u;
 			}
 		}
 		return null;
