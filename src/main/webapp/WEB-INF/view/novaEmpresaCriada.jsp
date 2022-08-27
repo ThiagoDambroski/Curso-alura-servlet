@@ -6,6 +6,9 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+	
+	<c:import url = "logout-parcial.jsp" />
+
 	<body>
 	<c:if test = "${not empty empresa}">
 		Empresa ${ empresa } cadastrada com sucesso

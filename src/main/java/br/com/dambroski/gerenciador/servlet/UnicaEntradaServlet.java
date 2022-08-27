@@ -29,7 +29,7 @@ public class UnicaEntradaServlet extends HttpServlet {
 		String paramAcao = request.getParameter("acao");
 		
 		HttpSession sessao = request.getSession();
-		boolean usuarioNaoEstarLogado = sessao.getAttribute("usuariologado") == null;
+		boolean usuarioNaoEstarLogado = sessao.getAttribute("usuarioLogado") == null;
 		boolean ehUmaAcaoProtegida = !( paramAcao.equals("Login") || paramAcao.equals("LoginFrom"));
 		if(ehUmaAcaoProtegida && usuarioNaoEstarLogado) {
 			response.sendRedirect("redirect:entrada?acao=LoginFrom");
