@@ -20,7 +20,7 @@ import br.com.dambroski.gerenciador.acao.RemovaEmpresa;
 
 
 
-@WebServlet("/entrada")
+//@WebServlet("/entrada")
 public class UnicaEntradaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
