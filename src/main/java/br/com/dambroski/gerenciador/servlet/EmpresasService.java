@@ -24,7 +24,7 @@ public class EmpresasService extends HttpServlet {
 		List<Empresa> empresas = new Banco().getEmpresa();
 		
 		String valor = request.getHeader("Accept");
-		if(valor.endsWith("xml")) {
+		if(valor.contains("xml")) {
 			XStream xstream = new XStream();
 			xstream.alias("empresa", Empresa.class);
 			String xml = xstream .toXML(empresas);
@@ -32,7 +32,7 @@ public class EmpresasService extends HttpServlet {
 					
 			response.setContentType("application/json");
 			response.getWriter().print(xml);
-		}else if(valor.endsWith("json")) {
+		}else if(valor.contains("json")) {
 			Gson gson = new Gson();
 			String json = gson.toJson(empresas);
 			
